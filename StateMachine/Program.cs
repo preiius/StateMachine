@@ -7,6 +7,13 @@ namespace StateMachine
     {
         static void Main(string[] args)
         {
+            BugTest();
+
+            Console.ReadKey(false);
+        }
+
+        private static void BugTest()
+        {
             // with Stateless
 
             var bug = new Bug("Incorrect stock count");
@@ -32,9 +39,6 @@ namespace StateMachine
             c.Assign("Harry");
             c.Assign("Fred");
             c.Close();
-
-
-            Console.ReadKey(false);
         }
     }
 }
