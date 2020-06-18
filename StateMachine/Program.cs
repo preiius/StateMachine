@@ -7,9 +7,26 @@ namespace StateMachine
     {
         static void Main(string[] args)
         {
-            BugTest();
+            //BugTest();
+
+            LeaveRequestTest();
 
             Console.ReadKey(false);
+        }
+
+        private static void LeaveRequestTest()
+        {
+            var leaveRequest = new LeaveRequest(5);
+
+            leaveRequest.Submit();
+            leaveRequest.Approve();
+            leaveRequest.Approve();
+
+            Console.WriteLine();
+            Console.WriteLine("State machine:");
+            Console.WriteLine(leaveRequest.ToDotGraph());
+
+
         }
 
         private static void BugTest()
