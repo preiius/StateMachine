@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StatePattern
+namespace StateMachine
 {
     class Program
     {
@@ -24,6 +24,18 @@ namespace StatePattern
             Console.WriteLine();
             Console.WriteLine("State machine:");
             Console.WriteLine(bug.ToDotGraph());
+
+
+            // with state pattern
+
+            Context c = new Context();
+
+            // Issue requests, which changes state
+            c.Assign("Joe");
+            c.Defer();
+            c.Assign("Harry");
+            c.Assign("Fred");
+            c.Close();
 
 
             Console.ReadKey(false);
